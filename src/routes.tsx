@@ -3,7 +3,7 @@ import NotFound from "./pages/not-found";
 
 export default [
     {
-        path: "/",
+        path: "/gencap",
         element: <Homepage />,
         errorElement: <NotFound />,
     },
