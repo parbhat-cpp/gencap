@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# GenCap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GenCap is a web app which generates social media captions by using Llama vision AI. 
 
-Currently, two official plugins are available:
+Follow the simple steps to generate captions:-
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Click on upload an image to select image from local storage.
+- You can also select the length of the captions (optional).
+- If you want to provide some additional information with the image you may provide it here (optional).
+- There are three buttons Upload image, Generate captions and remove image. To generate captions first you have to upload image and then click on generate captions.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Environment Variables
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To run this project, you will need to add the following environment variables to your .env file
+
+`VITE_BASE_URL` = CLIENT URL
+
+`VITE_BACKEND_URL` = SERVER URL
+
+
+## Installation
+
+Create a fork and clone repository. After that install dependencies
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To run on dev environment
+```bash
+npm run dev
 ```
+
+To create a build
+```bash
+npm run build
+```
+    
+## Tech Stack
+
+**Client:** React, TailwindCSS, Shadcn
+
+**Server:** Node, Express, Cloudflare R2, Llama vision AI API
+
+
+## Authors
+
+- [@parbhat-cpp](https://www.github.com/parbhat-cpp)
+
